@@ -4,10 +4,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  max-width: 1280px;
   width: 100%;
-  min-height: calc(74px + 45px);
+  min-height: 74px;
   box-sizing: border-box;
-
   padding: 45px 200px 0 200px;
 }
 

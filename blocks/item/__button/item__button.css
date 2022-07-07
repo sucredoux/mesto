@@ -1,0 +1,7 @@
+.item__button {
+  width: 22px;
+  height: 19px;
+  background-image: url(../../../images/item__button.png);
+  background-color: #fff;
+  border: none;
+}

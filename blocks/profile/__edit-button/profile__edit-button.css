@@ -1,7 +1,12 @@
 .profile__edit-button {
   width: 24px;
   height: 24px;
- /* background-color: #000;*/
+  background-image: url(../../../images/profile__edit.png);
+  background-color: #000;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #fff;
+  box-sizing: border-box;
 }
 
 @media (max-width: 320px) {
