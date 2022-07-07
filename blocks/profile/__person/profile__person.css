@@ -1,0 +1,15 @@
+.profile__person {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 336px;
+  padding-left: 30px;
+}
+
+@media (max-width: 320px) {
+  .profile__person {
+    align-items: center;
+    width: 282px;
+    padding-top: 22.25px;
+  }
+}
