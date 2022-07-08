@@ -1,0 +1,11 @@
+.container {
+  width: 100%;
+  max-width: calc(1280px - 200px * 2);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  grid-auto-flow: row;
+  justify-items: stretch;
+  justify-content: center;
+  column-gap: 17px;
+  row-gap: 20px;
+}
