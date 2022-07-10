@@ -1,12 +1,11 @@
 .header {
   grid-area: header;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 33px 41px;
+  grid-template-columns: 100%;
   justify-content: space-between;
-  align-items: flex-start;
   max-width: 1280px;
   width: 100%;
-  min-height: calc(74px + 45px);
   box-sizing: border-box;
   padding: 45px 200px 0 200px;
 }
@@ -20,6 +19,6 @@
 @media (max-width: 768px) {
   .header {
     padding: 28px 19px 0 19px;
-    min-height: calc(56px + 28px);
+    grid-template-rows: 24.4px 31.6px;
   }
 }

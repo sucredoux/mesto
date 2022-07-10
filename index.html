@@ -23,65 +23,64 @@
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__description">Исследователь океана</p>
           </div>
-          <button class="profile__edit-button button"></button>
+          <button type="submit" class="profile__edit-button button"></button>
         </div>
       </div>
-      <button class="profile__add button"></button>
+      <button type="submit" class="profile__add button"></button>
     </section>
     <section class="pop-up">
-      <div class="pop-up__overlay">
-        <div class="pop-up__container">
-          <h2 class="pop-up__title">Редактировать профиль</h2>
-          <form class="form">
-            <input type="text" class="form__input form__input_type_name" placeholder="Жак-Ив Кусто">
-            <input type="text" class="form__input form__input_type_description" placeholder="Исследователь океана">
-            <button type="submit" class="form__button button">Сохранить</button>
-          </form>
-          <button class="pop-up__close button"></button>
-        </div>
+      <div class="pop-up__container">
+        <h2 class="pop-up__title">Редактировать профиль</h2>
+        <form class="form">
+          <input type="text" class="form__input form__input_type_name" placeholder="Жак-Ив Кусто">
+          <input type="text" class="form__input form__input_type_description" placeholder="Исследователь океана">
+          <button type="submit" class="form__button button">Сохранить</button>
+        </form>
+        <button type="reset" class="pop-up__close button"></button>
       </div>
+
     </section>
     <section class="container">
       <article class="item">
         <img class="item__image" src="images/item__buenos-aires.jpg" alt="фото Буэнос-Айреса">
         <div class="item__caption">
           <h2 class="item__title">Буэнос-Айрес</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__cape-of-good-hope.jpg" alt="фото мыса Доброй Надежды">
         <div class="item__caption">
           <h2 class="item__title">Мыс Доброй Надежды</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__tokyo.jpg" alt="фото Токио">
         <div class="item__caption">
           <h2 class="item__title">Токио</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__antarctica.jpg" alt="фото Антарктики">
         <div class="item__caption">
           <h2 class="item__title">Антарктика</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__izola.jpg" alt="фото Изолы">
         <div class="item__caption">
           <h2 class="item__title">Изола</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__manarola.jpg" alt="фото Манаролы">
         <div class="item__caption">
           <h2 class="item__title">Манарола</h2>
-          <button class="item__button"></button>
+          <button type="image" class="item__button"></button>
         </div>
       </article>
     </section>
@@ -89,6 +88,6 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
-<script src="index.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
