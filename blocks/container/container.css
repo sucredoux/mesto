@@ -9,3 +9,9 @@
   column-gap: 17px;
   row-gap: 20px;
 }
+
+@media (max-width: 1279px) {
+  .container {
+    max-width: calc(1279px - 70px * 2);
+  }
+}
