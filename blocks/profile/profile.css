@@ -1,27 +1,19 @@
 .profile {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 150px;
+  grid-auto-flow: row;
+  gap: 20px;
   align-items: center;
-  max-width: calc(1280px - 200px * 2);
   width: 100%;
   padding-bottom: 50px;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 950px) {
   .profile {
-    max-width: calc(1279px - 70px * 2);
-  }
-}
-
-@media (max-width: 700px) {
-  .profile {
+    display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-content: center;
-    max-width: calc(700px - 19px * 2);
-    min-height: 286px;
-    box-sizing: content-box;
+    justify-content: flex-start;
+    gap: 0;
     padding-bottom: 36px;
   }
 }

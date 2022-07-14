@@ -11,76 +11,63 @@
 </head>
 <body class="page">
   <header class="header">
-    <img class="header__logo" src="images/logo__image.png" alt="Логотип проекта">
-    <div class="header__line"></div>
+    <img class="header__logo" src="images/logo__image_v.svg" alt="Логотип проекта">
   </header>
   <main class="content">
     <section class="profile">
       <div class="profile__block">
-        <img class="profile__avatar" src="images/Avatar.png" alt="аватар пользователя">
+        <img class="profile__avatar" src="images/Avatar.jpg" alt="аватар пользователя">
         <div class="profile__person">
           <div class="profile__name-line">
             <h1 class="profile__name">Жак-Ив Кусто</h1>
             <p class="profile__description">Исследователь океана</p>
           </div>
-          <button type="submit" class="profile__edit-button button"></button>
+          <button type="button" aria-label="Редактировать" class="profile__edit-button button"></button>
         </div>
       </div>
-      <button type="submit" class="profile__add button"></button>
-    </section>
-    <section class="pop-up">
-      <div class="pop-up__container">
-        <h2 class="pop-up__title">Редактировать профиль</h2>
-        <form class="form">
-          <input type="text" class="form__input form__input_type_name" placeholder="Жак-Ив Кусто">
-          <input type="text" class="form__input form__input_type_description" placeholder="Исследователь океана">
-          <button type="submit" class="form__button button">Сохранить</button>
-        </form>
-        <button type="reset" class="pop-up__close button"></button>
-      </div>
-
+      <button type="button" aria-label="Добавить" class="profile__add button"></button>
     </section>
     <section class="container">
       <article class="item">
         <img class="item__image" src="images/item__buenos-aires.jpg" alt="фото Буэнос-Айреса">
         <div class="item__caption">
           <h2 class="item__title">Буэнос-Айрес</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__cape-of-good-hope.jpg" alt="фото мыса Доброй Надежды">
         <div class="item__caption">
           <h2 class="item__title">Мыс Доброй Надежды</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__tokyo.jpg" alt="фото Токио">
         <div class="item__caption">
           <h2 class="item__title">Токио</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__antarctica.jpg" alt="фото Антарктики">
         <div class="item__caption">
           <h2 class="item__title">Антарктика</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__izola.jpg" alt="фото Изолы">
         <div class="item__caption">
           <h2 class="item__title">Изола</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
       <article class="item">
         <img class="item__image" src="images/item__manarola.jpg" alt="фото Манаролы">
         <div class="item__caption">
           <h2 class="item__title">Манарола</h2>
-          <button type="image" class="item__button"></button>
+          <button type="button" aria-label="Лайк" class="item__button"></button>
         </div>
       </article>
     </section>
@@ -88,6 +75,17 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
   </footer>
+  <div class="pop-up">
+    <div class="pop-up__container">
+      <h2 class="pop-up__title">Редактировать профиль</h2>
+      <form method="post" name="ProfileForm" enctype="text/plain" class="form">
+        <input type="text" name="ProfileName" class="form__input form__input_type_name" placeholder="Ваше имя">
+        <input type="text" name="ProfileDescription" class="form__input form__input_type_description" placeholder="Ваш род деятельности">
+        <button type="submit" aria-label="Отправить" name="ProfileSubmit" class="form__button button">Сохранить</button>
+      </form>
+      <button type="button" aria-label="Закрыть" class="pop-up__close button"></button>
+    </div>
+  </div>
 <script src="scripts/index.js"></script>
 </body>
 </html>

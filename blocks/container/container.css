@@ -1,8 +1,8 @@
 .container {
   width: 100%;
-  max-width: calc(1280px - 200px * 2);
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
+  grid-template-rows: repeat(auto-fill, 361px);
   grid-auto-flow: row;
   justify-items: stretch;
   justify-content: center;
@@ -10,8 +10,3 @@
   row-gap: 20px;
 }
 
-@media (max-width: 1279px) {
-  .container {
-    max-width: calc(1279px - 70px * 2);
-  }
-}
