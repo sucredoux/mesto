@@ -2,8 +2,8 @@
   width: 24px;
   height: 24px;
   padding: 0;
-  background-image: url(../../../images/profile__edit.png);
-  background-color: #000;
+  background-image: url(../../../images/profile__edit.svg);
+  background-color: rgba(0, 0, 0, 0.5);
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid #fff;

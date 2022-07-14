@@ -2,7 +2,7 @@
   width: 22px;
   height: 19px;
   padding: 0;
-  background-image: url(../../../images/item__button.png);
+  background-image: url(../../../images/item__button.svg);
   background-color: #fff;
   border: none;
 }
@@ -13,5 +13,5 @@
 }
 
 .item__button:active {
-  background-image: url(../../../images/item__button_active.png);
+  background-image: url(../../../images/item__button_active.svg);
 }

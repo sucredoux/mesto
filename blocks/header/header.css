@@ -1,24 +1,16 @@
 .header {
   grid-area: header;
-  display: grid;
-  grid-template-rows: 33px 41px;
-  grid-template-columns: 100%;
-  justify-content: space-between;
-  max-width: 1280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   width: 100%;
   box-sizing: border-box;
-  padding: 45px 200px 0 200px;
+  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
+  padding-top: 45px;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 400px) {
   .header {
-    padding: 40px 70px 0 70px;
-  }
-}
-
-@media (max-width: 768px) {
-  .header {
-    padding: 28px 19px 0 19px;
-    grid-template-rows: 24.4px 31.6px;
+    padding-top: 28px;
   }
 }

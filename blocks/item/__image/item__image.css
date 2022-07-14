@@ -1,6 +1,7 @@
 .item__image {
   width: 282px;
   height: 282px;
+  overflow: hidden;
   -webkit-border-top-left-radius: 10px;
   -webkit-border-top-right-radius: 10px;
   -moz-border-radius-topleft: 10px;
