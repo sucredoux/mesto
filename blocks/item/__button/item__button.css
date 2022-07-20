@@ -12,6 +12,3 @@
   cursor: pointer;
 }
 
-.item__button:active {
-  background-image: url(../../../images/item__button_active.svg);
-}
