@@ -1,14 +1,13 @@
 .item__delete {
-  display: flex;
-  position: absolute;
-  top: 20px;
-  right: 20px;
+  grid-column: 2/3;
+  grid-row: 1/2;
   width: 18px;
   height: 19px;
+  margin-top: 20px;
+  margin-left: 33px;
   background-image: url(../../../images/item__delete.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-color: rgba(255, 255, 255, 0);
-  z-index: 1;
   border: none;
 }

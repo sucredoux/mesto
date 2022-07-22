@@ -7,8 +7,16 @@
   height: 32px;
   margin: 0;
   border: none;
-  position: fixed;
-  transform: translate(402px, -74px);
+  position: relative;
+  margin: 0 -40px 8px 8px;
+  border: none;
+  align-self: flex-end;
+}
+
+@media (max-width: 950px) {
+  .pop-up__close {
+    margin: 0 0 8px 0;
+  }
 }
 
 @media (max-width: 700px) {
@@ -16,6 +24,6 @@
     width: 20px;
     height: 20px;
     background-size: 20px 20px;
-    transform: translate(238px, -61px);
+    margin: 0 0 16px 0;
   }
 }

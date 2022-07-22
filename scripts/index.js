@@ -29,170 +29,125 @@ const imageTitle = popupImage.querySelector('.pop-up__image-title');
 const initialCards = [
   {
     name: 'Манарола',
-    link: /*'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'*/ 'https://images.unsplash.com/photo-1592396355679-1e2a094e8bf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8bWFuYXJvbGF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
+    link: 'https://images.unsplash.com/flagged/photo-1557479962-a7c7afdf86e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fG1hbmFyb2xhfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
   },
   {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    name: 'Мыс Доброй Надежды',
+    link: 'https://images.unsplash.com/photo-1645212763353-601f622d90ed?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Y2FwZSUyMG9mJTIwZ29vZCUyMGhvcGUlMjBwZW5pbnN1bGF8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'
   },
   {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    name: 'Антарктика',
+    link: 'https://images.unsplash.com/photo-1551415923-31d2072bc248?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDF8fGFudGFydGljYXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
   },
   {
     name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    link: 'https://images.unsplash.com/photo-1612257460705-e0d24b7a4808?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8a2FtY2hhdGthfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'
   },
   {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    name: 'Новая Зеландия',
+    link: 'https://images.unsplash.com/photo-1593384754621-c058e0fc093c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8bmV3JTIwemVhbGFuZCUyMGJheXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
   },
   {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    name: 'Перу',
+    link: 'https://images.unsplash.com/photo-1533049060588-ef73e35d5f8b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fHBlcnUlMjBvY2VhbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60'
   }
 ];
 
-function openProfile() {
-  popupEdit.classList.add('pop-up_opened');
+const openPopup = (popup) => {
+  popup.classList.add('pop-up_opened');
+};
+
+const closePopup = (popup) => {
+  popup.classList.remove('pop-up_opened');
+};
+
+const openProfile = () => {
+  openPopup(popupEdit);
   formName.value = personName.textContent;
   formDescr.value = personDescr.textContent;
-}
+};
 
-function closeProfile() {
-  popupEdit.classList.remove('pop-up_opened');
-}
-
-
-function submitChangeProfile(evt) {
+const submitChangeProfile = (evt) => {
   evt.preventDefault();
   personName.textContent = formName.value;
   personDescr.textContent = formDescr.value;
-  closeForm();
+  closePopup(popupEdit);
+};
+
+const activeLike = (evt) =>{
+  evt.target.classList.toggle('item__button_active')};
+
+const deleteCard = (evt) => {
+  evt.target.closest('.item').remove();
+};
+
+const openImage = (evt) => {
+  openPopup(popupImage);
+  fullImage.setAttribute('src', evt.target.src);
+  imageTitle.textContent = evt.target.closest('.item').textContent;
 }
 
-function openPlace() {
-  popupAdd.classList.add('pop-up_opened');
-}
 
-function closePlace() {
-  popupAdd.classList.remove('pop-up_opened');
-}
-
-function changeImage() {
+function createCard() {
  for (let i=0; i<initialCards.length; i++) {
   const itemTemplate = document.querySelector('#card').content;
   const itemElement = itemTemplate.querySelector('.item').cloneNode(true);
-  let itemName = itemElement.querySelector('.item__title');
-  let itemLink = itemElement.querySelector('.item__image');
+  const itemName = itemElement.querySelector('.item__title');
+  const itemLink = itemElement.querySelector('.item__image');
   itemName.textContent = initialCards[i].name;
   itemLink.src = initialCards[i].link;
 
-  let likeButton = itemElement.querySelector('.item__button');
-    likeButton.addEventListener('click', function(evt) {
-    evt.target.classList.toggle('item__button_active');
-  });
+  itemElement.querySelector('.item__button').addEventListener('click', activeLike);
 
-  const deleteItem = itemElement.querySelector('.item__delete');
-  deleteItem.addEventListener('click', function() {
-    let itemElement = deleteItem.closest('.item');
-    itemElement.remove();
-  });
+  itemElement.querySelector('.item__delete').addEventListener('click', deleteCard);
 
-  const fullImage = popupImage.querySelector('.pop-up__full-image');
-  const imageTitle = popupImage.querySelector('.pop-up__image-title');
-  itemLink.addEventListener('click', function(evt) {
-    popupImage.classList.add('pop-up_opened');
-    fullImage.value = itemLink.src;
-    imageTitle.value = itemName.textContent;
-  });
-
-
-  closePopupImage.addEventListener('click', function(evt) {
-    popupImage.classList.remove('pop-up_opened');
-  });
+  itemLink.addEventListener('click', openImage);
 
   container.append(itemElement);
-
 }
-
+  return container;
 }
 
 function submitAddPlace(evt) {
   evt.preventDefault();
   const itemTemplate = document.querySelector('#card').content;
   const itemElement = itemTemplate.querySelector('.item').cloneNode(true);
-  let itemName = itemElement.querySelector('.item__title');
-  let itemLink = itemElement.querySelector('.item__image');
+  const itemName = itemElement.querySelector('.item__title');
+  const itemLink = itemElement.querySelector('.item__image');
   itemName.textContent = formPlace.value;
   itemLink.src = formLink.value;
 
-  let likeButton = itemElement.querySelector('.item__button');
-  likeButton.addEventListener('click', function(evt) {
-  evt.target.classList.toggle('item__button_active');
-  });
+  itemElement.querySelector('.item__button').addEventListener('click', activeLike);
 
-  const deleteItem = itemElement.querySelector('.item__delete');
-  deleteItem.addEventListener('click', function() {
-  let itemElement = deleteItem.closest('.item');
-  itemElement.remove();
-  });
+  itemElement.querySelector('.item__delete').addEventListener('click', deleteCard);
 
-  itemLink.addEventListener('click', function(evt) {
-    popupImage.classList.add('pop-up_opened');
-  });
-
-  closePopupImage.addEventListener('click', function(evt) {
-    popupImage.classList.remove('pop-up_opened');
-  });
+  itemLink.addEventListener('click', openImage);
 
   container.prepend(itemElement);
-  closePlace();
+  closePopup(popupAdd);
+  return container;
 }
 
 
 
-changeImage();
+createCard();
 
 editProfile.addEventListener('click', openProfile);
 
-addItem.addEventListener('click', openPlace);
-
-closePopupEdit.addEventListener('click', closeProfile);
+closePopupEdit.addEventListener('click', (popup) =>
+  closePopup(popupEdit));
 
 formEdit.addEventListener('submit', submitChangeProfile);
 
-closePopupAdd.addEventListener('click', closePlace);
+addItem.addEventListener('click', (popup) =>
+  openPopup(popupAdd));
+
+closePopupAdd.addEventListener('click', (popup) =>
+  closePopup(popupAdd));
 
 formAdd.addEventListener('submit', submitAddPlace);
 
-/*formAdd.addEventListener('submit', submitChangeImage);
-deleteItem.addEventListener('click', deleteImage);*/
+closePopupImage.addEventListener('click', (popup) =>
+  closePopup(popupImage));
 
 
-/*const initialCards = [
-  {
-    name: 'Буэнос-Айрес',
-    link: 'https://unsplash.com/photos/a1dpvJv45To'
-  },
-  {
-    name: 'Мыс Доброй Надежды',
-    link: 'https://unsplash.com/photos/FMgXX_VPM5k'
-  },
-  {
-    name: 'Токио',
-    link: 'https://unsplash.com/photos/7H9sdUFFykg'
-  },
-  {
-    name: 'Антарктика',
-    link: 'https://unsplash.com/photos/4ReskwNsh68'
-  },
-  {
-    name: 'Дубровник',
-    link: 'https://unsplash.com/photos/RvDc461s1EI'
-  },
-  {
-    name: 'Манарола',
-    link: 'https://images.unsplash.com/photo-1592396355679-1e2a094e8bf1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1935&q=80'
-  },
-];*/
