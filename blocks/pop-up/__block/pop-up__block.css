@@ -1,8 +1,7 @@
-.item__caption {
+.pop-up__block {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   box-sizing: border-box;
-  padding: 24px 20px 26px 21px;
 }
