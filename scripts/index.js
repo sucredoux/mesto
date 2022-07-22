@@ -74,8 +74,9 @@ const submitChangeProfile = (evt) => {
   closePopup(popupEdit);
 };
 
-const activeLike = (evt) =>{
-  evt.target.classList.toggle('item__button_active')};
+const activeLike = (evt) => {
+  evt.target.classList.toggle('item__button_active')
+};
 
 const deleteCard = (evt) => {
   evt.target.closest('.item').remove();
@@ -88,27 +89,24 @@ const openImage = (evt) => {
 }
 
 
-function createCard() {
- for (let i=0; i<initialCards.length; i++) {
-  const itemTemplate = document.querySelector('#card').content;
-  const itemElement = itemTemplate.querySelector('.item').cloneNode(true);
-  const itemName = itemElement.querySelector('.item__title');
-  const itemLink = itemElement.querySelector('.item__image');
-  itemName.textContent = initialCards[i].name;
-  itemLink.src = initialCards[i].link;
+const createCard = () => {
+    initialCards.forEach((item) => {
+    const itemTemplate = document.querySelector('#card').content;
+    const itemElement = itemTemplate.querySelector('.item').cloneNode(true);
+    const itemName = itemElement.querySelector('.item__title');
+    const itemLink = itemElement.querySelector('.item__image');
+    itemName.textContent = item.name;
+    itemLink.src = item.link;
+    itemLink.alt = `Фото ${itemName.textContent}`;
+    itemElement.querySelector('.item__button').addEventListener('click', activeLike);
+    itemElement.querySelector('.item__delete').addEventListener('click', deleteCard);
+    itemLink.addEventListener('click', openImage);
+    container.append(itemElement);
+  });
+    return container;
+  }
 
-  itemElement.querySelector('.item__button').addEventListener('click', activeLike);
-
-  itemElement.querySelector('.item__delete').addEventListener('click', deleteCard);
-
-  itemLink.addEventListener('click', openImage);
-
-  container.append(itemElement);
-}
-  return container;
-}
-
-function submitAddPlace(evt) {
+const submitAddPlace = (evt) => {
   evt.preventDefault();
   const itemTemplate = document.querySelector('#card').content;
   const itemElement = itemTemplate.querySelector('.item').cloneNode(true);
@@ -116,21 +114,17 @@ function submitAddPlace(evt) {
   const itemLink = itemElement.querySelector('.item__image');
   itemName.textContent = formPlace.value;
   itemLink.src = formLink.value;
-
+  itemLink.alt = `Фото ${itemName.textContent}`;
   itemElement.querySelector('.item__button').addEventListener('click', activeLike);
-
   itemElement.querySelector('.item__delete').addEventListener('click', deleteCard);
-
   itemLink.addEventListener('click', openImage);
-
   container.prepend(itemElement);
   closePopup(popupAdd);
   return container;
 }
 
 
-
-createCard();
+createCard(container);
 
 editProfile.addEventListener('click', openProfile);
 
