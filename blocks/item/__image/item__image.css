@@ -10,3 +10,7 @@
   -moz-border-radius-topleft: 10px;
   -moz-border-radius-topright: 10px;
 }
+
+.item__image:hover {
+  cursor: pointer;
+}

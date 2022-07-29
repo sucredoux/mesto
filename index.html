@@ -38,10 +38,10 @@
       <button type="button" aria-label="Закрыть" class="pop-up__close pop-up__close_type_edit button"></button>
       <div class="pop-up__container pop-up__container_type_edit">
         <h2 class="pop-up__title pop-up__title_type_edit">Редактировать профиль</h2>
-        <form method="post" name="ProfileForm" enctype="text/plain" class="form form_type_edit">
-          <input type="text" name="ProfileName" class="form__input form__input_type_name" placeholder="Ваше имя">
-          <input type="text" name="ProfileDescription" class="form__input form__input_type_description" placeholder="Ваш род деятельности">
-          <button type="submit" aria-label="Отправить" name="ProfileSubmit" class="form__button button">Сохранить</button>
+        <form name="profile-form" class="form form_type_edit">
+          <input type="text" name="profile-name" class="form__input form__input_type_name" required placeholder="Ваше имя">
+          <input type="text" name="profile-description" class="form__input form__input_type_description" placeholder="Ваш род деятельности">
+          <button type="submit" name="profile-submit" class="form__button button">Сохранить</button>
         </form>
       </div>
     </div>
@@ -51,10 +51,10 @@
       <button type="button" aria-label="Закрыть" class="pop-up__close pop-up__close_type_add button"></button>
       <div class="pop-up__container pop-up__container_type_add">
         <h2 class="pop-up__title pop-up__title_type_add">Новое место</h2>
-        <form method="post" name="PlaceForm" enctype="text/plain" class="form form_type_add">
-          <input type="text" name="PlaceName" class="form__input form__input_type_place" placeholder="Название">
-          <input type="text" name="PlaceLink" class="form__input form__input_type_image-link" placeholder="Ссылка на картинку">
-          <button type="submit" aria-label="Отправить" name="ProfileSubmit" class="form__button button">Создать</button>
+        <form name="place-form" class="form form_type_add">
+          <input type="text" name="place-name" class="form__input form__input_type_place" placeholder="Название">
+          <input type="url" name="place-link" class="form__input form__input_type_image-link" placeholder="Ссылка на картинку">
+          <button type="submit" name="profile-submit" class="form__button button">Создать</button>
         </form>
       </div>
     </div>
@@ -62,14 +62,14 @@
   <div class="pop-up pop-up_type_image">
     <div class="pop-up__block">
       <button type="button" aria-label="Закрыть" class="pop-up__close pop-up__close_type_image button"></button>
-      <img class="pop-up__full-image" alt="Фото в полный размер">
+      <img class="pop-up__full-image" src="#" alt="">
       <h3 class="pop-up__image-title"></h3>
     </div>
   </div>
   <template id="card">
     <article class="item">
-        <img class="item__image" src="#" alt="#">
-        <button type="button" aria-label="Корзина" class="item__delete button"></button>
+        <img class="item__image" src="#" alt="">
+        <button type="button" aria-label="Удалить" class="item__delete button"></button>
         <h2 class="item__title"></h2>
         <button type="button" aria-label="Лайк" class="item__button button"></button>
     </article>
