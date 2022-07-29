@@ -40,7 +40,7 @@
         <h2 class="pop-up__title pop-up__title_type_edit">Редактировать профиль</h2>
         <form name="profile-form" class="form form_type_edit">
           <input type="text" name="profile-name" class="form__input form__input_type_name" required placeholder="Ваше имя">
-          <input type="text" name="profile-description" class="form__input form__input_type_description" placeholder="Ваш род деятельности">
+          <input type="text" name="profile-description" class="form__input form__input_type_description" required placeholder="Ваш род деятельности">
           <button type="submit" name="profile-submit" class="form__button button">Сохранить</button>
         </form>
       </div>
@@ -52,8 +52,8 @@
       <div class="pop-up__container pop-up__container_type_add">
         <h2 class="pop-up__title pop-up__title_type_add">Новое место</h2>
         <form name="place-form" class="form form_type_add">
-          <input type="text" name="place-name" class="form__input form__input_type_place" placeholder="Название">
-          <input type="url" name="place-link" class="form__input form__input_type_image-link" placeholder="Ссылка на картинку">
+          <input type="text" name="place-name" class="form__input form__input_type_place" required placeholder="Название">
+          <input type="url" name="place-link" class="form__input form__input_type_image-link" required placeholder="Ссылка на картинку">
           <button type="submit" name="profile-submit" class="form__button button">Создать</button>
         </form>
       </div>
